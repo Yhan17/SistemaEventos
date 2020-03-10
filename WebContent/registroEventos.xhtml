@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>Registros</title>
+<link rel="stylesheet" type="text/css" href="resources/crudStyle.css" />
+</head>
+<body>
+	<header>
+		<h1>Adicione aqui seus eventos:</h1>
+	</header>
+	<main>
+		<h:form>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<p>Nome do Evento</p>
+							</td>
+							<td><input jsf:id="Nome" type="text"
+								placeholder="Nome do Evento" /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>Endereço</p>
+							</td>
+							<td><input jsf:id="Endereço" type="text"
+								placeholder="Endereço" /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>Data</p>
+							</td>
+							<td><input jsf:id="Data" type="text" placeholder="Data" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Hora</p>
+							</td>
+							<td><input jsf:id="Hora" type="text" placeholder="Hora" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Capacidade Maxima</p>
+							</td>
+							<td><input jsf:id="CapMaxima" type="text"
+								placeholder="Quantidade de pessoas" /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>Valor Total</p>
+							</td>
+							<td><input jsf:id="Total" type="text" placeholder="Valor" />
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</h:form>
+	</main>
+</body>
+</html>

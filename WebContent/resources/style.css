@@ -4,7 +4,7 @@ body {
 .container{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 15vh 210vh 5vh;
+	grid-template-rows: 17vh 210vh 5vh;
 	grid-template-areas: 
 	"h h h h h"
 	". m m a ."
@@ -32,6 +32,7 @@ ul{
 	justify-self:stretch;
 	text-align: right;
 	list-style-type: none;
+	padding-top: 7vh;
 
 }
 li{

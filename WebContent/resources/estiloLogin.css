@@ -1,0 +1,79 @@
+body {
+	background: #f6f6f6;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 10vh 70vh 20vh;
+	grid-template-areas: 
+	". h ." 
+	". f ."
+	". . .";
+	grid-gap: 5px;
+}
+
+header {
+	grid-area: h;
+}
+
+h1 {
+	font-family: Calibri;
+	text-align: center;
+	font-weight: 300;
+}
+
+.form {
+	grid-area: f;
+	height: 40%;
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 100%;
+	padding: 5vh;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form textarea {
+	background: #f2f2f2;
+	margin: 0 auto 30px;	
+	border: 0;
+	width: 100%;
+	box-sizing: border-box;
+	height: 100px;
+	
+}
+.form label{
+  font-family: Calibri;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: rgb(89,169,254);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 3vh;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: rgb(0,122,255);
+}

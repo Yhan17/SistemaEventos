@@ -10,4 +10,9 @@ public class IndexController implements Serializable{
 
 	private static final long serialVersionUID = 8830256567017040262L;
 
+		public String trocarPagina() {
+			return "index.xhtml";
+		}
+
+		
 }
