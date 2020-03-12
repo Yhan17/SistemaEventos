@@ -1,0 +1,108 @@
+body {
+	background-color: #f6f6f6;
+}
+
+header{
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: ". t s";
+}
+.TITULO {
+	grid-area: t;
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+}
+a{
+	color: red;
+	text-decoration: none;
+}
+a:hover{
+	color:#A52A2A;
+}
+h2{
+	grid-area: s;
+	text-align: right;
+}
+.Alinhamento {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: ". v .";
+}
+
+.form {
+	grid-area: v;
+	background-color: #ffff;
+	width: 100%;
+	heigth: 700vh;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+}
+
+.mensagem {
+	text-align: center;
+	color: red;
+	list-style-type: none;
+}
+
+.Inputs {
+	width: 180%;
+	border: 1px solid black;
+}
+
+.alinharPonteiro {
+	margin-left: 13vh;
+}
+
+.botao {
+	color: white;
+	margin-left: 1vh;
+	font-family: "Roboto", sans-serif;
+	border: 0;
+	width: 9vh;
+	padding: 15px;
+	background-color: #1E90FF;
+	cursor: pointer;
+	margin-bottom: 2px;
+}
+
+.botao:disabled {
+	cursor: default;
+	background-color: gray;
+}
+
+p {
+	color: white; font-family : "Roboto", sans-serif;
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+}
+
+.entrada {
+	border-radius: 2px;
+	width: 90%;
+	margin-left: 20px;
+}
+
+.Principal {
+	background-color: black;
+	border: 1px solid black;
+}
+
+.tabela {
+	margin-top: 50px;
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th.Colunas {
+	border: 1px solid black;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+td {
+	border: 1px solid black;
+	text-align: center;
+}

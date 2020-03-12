@@ -5,7 +5,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 <head>
 <title>Login</title>
-<link rel="stylesheet" type="text/css" href="resources/estiloLogin.css" />
+<link rel="stylesheet" type="text/css" href="resource/estiloLogin.css" />
 </head>
 <body>
 	<div class="container">
@@ -13,16 +13,17 @@
 			<h1>Faça seu Login</h1>
 		</header>
 		<div class="form">
+			<h:messages style="color:red;margin:5px;list-style-type:none;font-family: 'Roboto', sans-serif; text-align: center;" />
 			<h:form>
 				<label>Nome:</label>
-				<input jsf:id="nome" type="text" placeholder="Nome" />
+				<input jsf:id="nome" type="text" placeholder="Nome" jsf:value="#{loginController.login}"/>
 				<br />
 				<label>Senha:</label>
-				<input jsf:id="email" type="password" placeholder="Email"  />
+				<input jsf:id="email" type="password" placeholder="Senha"  jsf:value="#{loginController.senha}"/>
 				<br />
 				<label>Mensagem:</label>
 				<br />
-				<button jsf:id="botao" type="Submit" >Submit</button>				
+				<button jsf:id="botao" type="Submit" jsf:action="#{loginController.validar}">Submit</button>				
 			</h:form>
 
 		</div>

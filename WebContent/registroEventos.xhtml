@@ -5,63 +5,123 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 <head>
 <title>Registros</title>
-<link rel="stylesheet" type="text/css" href="resources/crudStyle.css" />
+<link rel="stylesheet" type="text/css" href="resource/crudStyle.css" />
 </head>
 <body>
 	<header>
-		<h1>Adicione aqui seus eventos:</h1>
+		<h1 class="TITULO">Adicione aqui seus eventos:</h1>
+		<h2><a href="index.xhtml">Sair</a></h2>
 	</header>
 	<main>
 		<h:form>
-			<div>
+		<div class="Alinhamento">
+			<div class="form">
+				<h:messages styleClass="mensagem"/>
 				<table>
 					<tbody>
 						<tr>
-							<td>
+							<td class="Principal">
 								<p>Nome do Evento</p>
 							</td>
-							<td><input jsf:id="Nome" type="text"
-								placeholder="Nome do Evento" /></td>
+							<td class="Inputs"><img src="images/evento-icon.png" style="width: 20px; height: 20px"/><input jsf:id="Nome" type="text"
+								placeholder="Nome do Evento"
+								jsf:value="#{registroController.evento.nomeEvento}" class="entrada"/></td>
 						</tr>
 						<tr>
-							<td>
+							<td class="Principal">
 								<p>Endereço</p>
 							</td>
-							<td><input jsf:id="Endereço" type="text"
-								placeholder="Endereço" /></td>
+							<td class="Inputs"><img src="images/endereco-icon.jpg" style="width: 20px; height: 20px"/><input jsf:id="Endereço" type="text"
+								placeholder="Endereço"
+								jsf:value="#{registroController.evento.endereco}" class="entrada"/></td>
 						</tr>
 						<tr>
-							<td>
+							<td class="Principal">
 								<p>Data</p>
 							</td>
-							<td><input jsf:id="Data" type="text" placeholder="Data" />
-							</td>
+							<td class="Inputs"><img src="images/data-icon.png" style="width: 20px; height: 20px"/><input jsf:id="Data" type="text"
+								placeholder="Ex: 03/02/2020"
+								jsf:value="#{registroController.evento.data}" class="entrada"/></td>
 						</tr>
 						<tr>
-							<td>
+							<td class="Principal">
 								<p>Hora</p>
 							</td>
-							<td><input jsf:id="Hora" type="text" placeholder="Hora" />
-							</td>
+							<td class="Inputs"><img src="images/hora-icon.png" style="width: 20px; height: 20px"/><input jsf:id="Hora" type="text" placeholder="Hora"
+								jsf:value="#{registroController.evento.hora}" class="entrada"/></td>
 						</tr>
 						<tr>
-							<td>
+							<td class="Principal">
 								<p>Capacidade Maxima</p>
 							</td>
-							<td><input jsf:id="CapMaxima" type="text"
-								placeholder="Quantidade de pessoas" /></td>
+							<td class="Inputs"><img src="images/pessoas-icon.png" style="width: 20px; height: 20px"/><input jsf:id="CapMaxima" type="text"
+								placeholder="Quantidade de pessoas"
+								jsf:value="#{registroController.evento.capacidadeMaxima}" class="entrada"/></td>
 						</tr>
 						<tr>
-							<td>
+							<td class="Principal">
 								<p>Valor Total</p>
 							</td>
-							<td><input jsf:id="Total" type="text" placeholder="Valor" />
-							</td>
+							<td class="Inputs"><img src="images/vetor-valor.png" style="width: 20px; height: 20px"/><input jsf:id="Total" type="text" placeholder="Valor"
+								jsf:value="#{registroController.evento.valorToral}" class="entrada"/></td>
 						</tr>
 
 					</tbody>
 				</table>
+				<div class="alinharPonteiro">
+				<button jsf:id="Incluir" type="Submit"
+					jsf:actionListener="#{registroController.inserir()}"  jsf:disabled="#{registroController.evento.id != null}" class="botao">Incluir</button>
+				<button jsf:id="Alterar" type="Submit"
+					jsf:actionListener="#{registroController.alterar()}" jsf:disabled="#{registroController.evento.id == null}" class="botao">Alterar</button>
+				<button jsf:id="Limpar" type="Submit"
+					jsf:actionListener="#{registroController.limpar()}" jsf:disabled="#{registroController.evento.id == null}" class="botao">Limpar</button>
+				<button jsf:id="Deletar" type="Submit"
+					jsf:actionListener="#{registroController.deletar()}" jsf:disabled="#{registroController.evento.id == null}" class="botao">Deletar</button>
+				</div>
 			</div>
+			</div>
+		</h:form>
+		<h:form>
+			<h:dataTable id="tabela" value="#{registroController.eventos}"
+				var="lista" styleClass="tabela">
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >ID</f:facet>
+					<h:outputLabel value="#{lista.id}" ></h:outputLabel>
+				</h:column>
+				<h:column headerClass="Colunas" >
+					<f:facet name="header" >Nome</f:facet>
+					<h:outputLabel value="#{lista.nomeEvento}" ></h:outputLabel>
+				</h:column>
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Endereço</f:facet>
+					<h:outputLabel value="#{lista.endereco}" ></h:outputLabel>
+				</h:column>
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Data</f:facet>
+					<h:outputLabel value="#{lista.data}" ></h:outputLabel>
+				</h:column>
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Hora</f:facet>
+					<h:outputLabel value="#{lista.hora}" ></h:outputLabel>
+				</h:column>
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Capacidade Maxima</f:facet>
+					<h:outputLabel value="#{lista.capacidadeMaxima}" ></h:outputLabel>
+				</h:column >
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Valor Total</f:facet>
+					<h:outputLabel value="#{lista.valorToral}" ></h:outputLabel>
+				</h:column >
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Horario da adição</f:facet>
+					<h:outputLabel value="#{lista.horarioAdicao}" ></h:outputLabel>
+				</h:column>
+				<h:column headerClass="Colunas">
+					<f:facet name="header" >Ação</f:facet>
+					<h:commandLink value="Editar"
+						actionListener="#{registroController.editar(lista)}" ></h:commandLink>
+				</h:column>
+			</h:dataTable>
 		</h:form>
 	</main>
 </body>
